@@ -1,15 +1,13 @@
 import jsonPlaceholder from '../api/jsonplaceholder';
 
-export const fetchPosts = async () => {
+export const fetchPosts = () => async dispatch => {
+    const response = await jsonPlaceholder.get('/posts');
+    dispatch({ type: 'FETCH_POSTS', payload: response });
+};
 
+    //const response = await jsonPlaceholder.get('/posts')
     // Bad Approach!!! Breaks rules of action creator
     // Actions must be plain actions!!!
     // This will be solved with redux-thunk middleware
     // when transpiled to es2015, we are not exporting a plain js object because async await syntax
-    const response = await jsonPlaceholder.get('/posts')
-    
-    return {
-        type: 'FETCH_POSTS',
-        payload: response
-    }
-}
+    // getState was ommited from...

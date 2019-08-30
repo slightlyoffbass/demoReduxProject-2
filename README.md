@@ -22,3 +22,29 @@
 - Some reducer sees the action, returns the data off the 'payload'
 - Because we generated some new state object, redux/react-redux cuase our React app to be rendered
     - We get fetched data into a component by generating new state in our redux store, then getting that into our component through MapStateToProps
+ <br>
+ <br>
+ 
+ 
+|     |     |     |
+|:---:|:---:|:---:|
+| redux | -> | The redux libary |
+| react-redux | -> | Integration layer between react and redux |
+| axios | -> |  Helps us make network requests |
+| redux | -> | Middlware to help us make requests in |
+
+### Middleware in Redux
+- function that gets called with every action we dispatch
+- has the abbility to **STOP,MODIFY**, or otherwise mess around with actions
+- Tons of open sourse middlware exits
+- Most popular use of middlware is dealing with async actions
+
+### Rules with Redux Thunk
+- Action Creators can return ation objects
+    - or
+- Action Creators can return functions!
+<br>
+<br>
+
+    - if an action gets returned, it musth ave a type
+    - if an action object gets returned, it can optionally have a 'payload'
