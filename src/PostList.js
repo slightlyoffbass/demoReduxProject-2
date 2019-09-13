@@ -10,7 +10,7 @@ class PostList extends React.Component{
 
     render (){
         return(
-            <div className="">
+            <div>
                 Post List
             </div>
         )
