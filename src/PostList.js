@@ -17,7 +17,7 @@ class PostList extends React.Component{
     }
 }
 
-const mapStateToProps = (state) =>{
+const mapStateToProps = state =>{
     return { posts: state.posts};
 }
 
