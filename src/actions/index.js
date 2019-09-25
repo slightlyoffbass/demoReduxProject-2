@@ -12,10 +12,7 @@ export const fetchPosts = () => async dispatch => {
   
 };
 
-export const fetchUser =  id  =>  dispatch => {
-    _fetchUser(id,dispatch);
-
-};
+export const fetchUser =  id  =>  dispatch => _fetchUser(id,dispatch);
 
 // underscore for private function
 // memoize allows id to be called once, vs makeing call every time
