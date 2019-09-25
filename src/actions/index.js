@@ -1,6 +1,10 @@
 import _ from 'lodash';
 import jsonPlaceholder from '../api/jsonplaceholder';
 
+export const fetchPostsAndUsers = ( ) => async dispatch=> {
+   await  dispatch(fetchPosts());
+};
+
 export const fetchPosts = () => async dispatch => {
   
         const promise = await jsonPlaceholder.get('/posts');
