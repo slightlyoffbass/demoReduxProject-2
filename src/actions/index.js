@@ -12,19 +12,14 @@ export const fetchPosts = () => async dispatch => {
   
 };
 
-export const fetchUser =  id  =>  dispatch => _fetchUser(id,dispatch);
-
-// underscore for private function
-// memoize allows id to be called once, vs makeing call every time
-// this solution does not allow you to refetch user, but is a smaller code change
-const _fetchUser = _.memoize(async(id,dispatch) =>{
+export const fetchUser =  id  => async  dispatch => {
     const response = await jsonPlaceholder.get(`/users/${id}`);
     
     dispatch({
         type: 'FETCH_USER',
         payload: response.data
     });
-});
+};
 
     //const response = await jsonPlaceholder.get('/posts')
     // Bad Approach!!! Breaks rules of action creator
